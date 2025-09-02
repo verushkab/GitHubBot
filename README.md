@@ -1,6 +1,6 @@
 # 🤖 GitHubBot
 
-Un bot básico hecho en **Python** que envía mensajes de prueba a Discord.
+Un bot básico hecho en **Python** que envía mensajes de prueba a Telegram.
 
 ## 🚀 Requisitos
 - Python 3.8+
