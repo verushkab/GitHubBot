@@ -1,0 +1,42 @@
+# Archivos de entorno (tokens, claves, variables sensibles)
+.env
+*.env
+
+# Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtualenv
+venv/
+ENV/
+env/
+.venv/
+
+# Archivos de logs
+*.log
+
+# Configuración del sistema/IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Archivos de Docker
+*.pid
+*.tar
+docker-compose.override.yml
+
+# Archivos de AWS CLI o credenciales
+*.pem
+*.key
+.aws/
+
+# Caché
+*.cache/
+.cache/
