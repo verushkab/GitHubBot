@@ -1,8 +1,10 @@
 import os
 import requests
+from flask import Flask, request
 
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")  # Consigue tu id con @userinfobot
+app = Flask(__name__)
 
 def send_message(text: str):
     if not TELEGRAM_TOKEN or not CHAT_ID:
@@ -13,5 +15,16 @@ def send_message(text: str):
     r.raise_for_status()
     print("✅ Mensaje enviado")
 
+@app.route("/github", methods=["POST"])
+def github_webhook():
+    data = request.json
+    if "pusher" in data:
+        repo = data["repository"]["name"]
+        pusher = data["pusher"]["name"]
+        branch = data["ref"].split("/")[-1]
+        send_message(f"📢 Repo: {repo}\n👤 Push por: {pusher}\n🌿 Rama: {branch}")
+    return "ok", 200
+
 if __name__ == "__main__":
-    send_message("🚀 Hola! El bot está funcionando en local 🎉")
+    app.run(host="0.0.0.0", port=5000)
+
