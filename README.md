@@ -7,6 +7,7 @@ Un bot básico hecho en **Python** que envía mensajes de prueba a Telegram.
 - pip
 - Flash
 - requests
+- ngrok
 
 ## ⚙️ Instalación
 Clona el repositorio e instala dependencias:
